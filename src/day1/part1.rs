@@ -15,7 +15,7 @@ impl SortedRecord {
     }
 }
 
-const FILE_PATH: &str = "./location_ids.csv";
+const FILE_PATH: &str = "./src/day1/location_ids.csv";
 
 pub fn calc_total_difference() {
     let mut sorted_records: Vec<SortedRecord> = Vec::new();
