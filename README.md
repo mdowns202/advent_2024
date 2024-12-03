@@ -1,5 +1,5 @@
 # Advent of Code 2024
-
+---
 #### Day One (Historia Hysteria)
 - [x] Location IDs
 - [x] Similarity Score
@@ -7,6 +7,10 @@
 #### Day Two (Red-Nosed Reports)
 - [x] Report Safety
 - [x] Problem Dampener
+
+#### Day Three
+- [ ] Part 1
+- [ ] Part 2
 
 #### Day Four
 - [ ] Part 1
