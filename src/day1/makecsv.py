@@ -4,6 +4,7 @@ from result import Err, Ok, Result
 
 def main():
     """Format data as csv file. It was quicker to work with this simple file in Python."""
+    """* Was pretty easy to work with this type of file in Rust as well (Day 2, Part 1)*"""
 
     try:
         with open("./location_ids.csv", "r+", newline="") as file:

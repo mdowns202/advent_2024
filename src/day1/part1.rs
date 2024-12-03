@@ -1,5 +1,7 @@
 use csv;
 
+const LOC_ID_FILE_PATH: &str = "./src/day1/location_ids.csv";
+
 #[derive(Debug)]
 pub struct SortedRecord {
     list_a_item: u32,
@@ -14,8 +16,6 @@ impl SortedRecord {
         }
     }
 }
-
-const FILE_PATH: &str = "./src/day1/location_ids.csv";
 
 pub fn calc_total_difference() {
     let mut sorted_records: Vec<SortedRecord> = Vec::new();
@@ -38,11 +38,11 @@ pub fn calc_total_difference() {
         let difference: u32 = record.list_a_item.abs_diff(record.list_b_item);
         total_difference += difference;
     }
-    println!("Total Difference Between Lists: {}", total_difference);
+    println!("D1P1 | Total List Difference => {}", total_difference);
 }
 
 pub fn load_location_ids() -> (Vec<u32>, Vec<u32>) {
-    let reader = csv::Reader::from_path(FILE_PATH).expect("file not found");
+    let reader = csv::Reader::from_path(LOC_ID_FILE_PATH).expect("file not found");
     let records = reader.into_records();
 
     let mut list_a: Vec<u32> = Vec::new();
