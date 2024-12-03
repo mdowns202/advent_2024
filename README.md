@@ -1,5 +1,5 @@
-# Advent of Code 2024
----
+## Advent of Code 2024
+
 #### Day One (Historia Hysteria)
 - [x] Location IDs
 - [x] Similarity Score
