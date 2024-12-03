@@ -2,7 +2,8 @@ use super::part1::load_location_ids;
 
 pub fn calc_similarity_score() {
     let mut sim_score: u32 = 0;
-    let (list_a, list_b) = load_location_ids();
+    let location_lists = load_location_ids();
+    let (list_a, list_b) = (location_lists.0, location_lists.1);
 
     for item_a in list_a {
         let mut item_count: u32 = 0;

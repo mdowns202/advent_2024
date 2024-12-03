@@ -1,13 +1,13 @@
-use std::fs;
+use std::{fs, path::Path};
 
-const REPORTS_FILE_PATH: &str = "./src/day2/reports.txt";
+const REPORTS_FILE_PATH: &str = "src/day2/reports.txt";
 
 #[derive(Debug)]
 pub struct Report {
     pub sequence: Vec<u32>,
+    pub safety: ReportSafety,
     #[allow(dead_code)]
     length: u16,
-    pub safety: ReportSafety,
 }
 
 impl Report {
@@ -15,14 +15,16 @@ impl Report {
         let length = sequence.len().try_into().unwrap();
         let safety: ReportSafety;
 
-        match SafetyOrder::get(sequence.clone()) {
-            Some(ord) => safety = ReportSafety::Safe(ord),
-            None => safety = ReportSafety::Unsafe,
+        if let Some(ord) = SafetyOrder::get(sequence.clone()) {
+            safety = ReportSafety::Safe(ord)
+        } else {
+            safety = ReportSafety::Unsafe
         }
+
         Self {
             sequence,
-            length,
             safety,
+            length,
         }
     }
 
@@ -101,8 +103,10 @@ pub fn sum_safe_reports() {
 }
 
 pub fn load_reports() -> Vec<Report> {
+    let file_path = Path::new(REPORTS_FILE_PATH);
+    let file = fs::read_to_string(file_path).expect("could not read file to string");
     let mut reports: Vec<Report> = Vec::new();
-    let file = fs::read_to_string(REPORTS_FILE_PATH).expect("could not read file to string");
+
     for line in file.lines() {
         let mut sequence: Vec<u32> = Vec::new();
         line.split(' ')

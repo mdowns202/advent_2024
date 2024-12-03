@@ -1,6 +1,7 @@
 use csv;
+use std::path::Path;
 
-const LOC_ID_FILE_PATH: &str = "./src/day1/location_ids.csv";
+const LOC_ID_FILE_PATH: &str = "src/day1/location_ids.csv";
 
 #[derive(Debug)]
 pub struct SortedRecord {
@@ -17,11 +18,14 @@ impl SortedRecord {
     }
 }
 
+pub struct LocationIDs(pub Vec<u32>, pub Vec<u32>);
+
 pub fn calc_total_difference() {
     let mut sorted_records: Vec<SortedRecord> = Vec::new();
     let mut total_difference: u32 = 0;
 
-    let (mut list_a, mut list_b) = load_location_ids();
+    let location_lists = load_location_ids();
+    let (mut list_a, mut list_b) = (location_lists.0, location_lists.1);
 
     list_a.sort();
     list_b.sort();
@@ -41,8 +45,9 @@ pub fn calc_total_difference() {
     println!("D1P1 | Total List Difference => {}", total_difference);
 }
 
-pub fn load_location_ids() -> (Vec<u32>, Vec<u32>) {
-    let reader = csv::Reader::from_path(LOC_ID_FILE_PATH).expect("file not found");
+pub fn load_location_ids() -> LocationIDs {
+    let file_path = Path::new(LOC_ID_FILE_PATH);
+    let reader = csv::Reader::from_path(file_path).expect("file not found");
     let records = reader.into_records();
 
     let mut list_a: Vec<u32> = Vec::new();
@@ -60,5 +65,5 @@ pub fn load_location_ids() -> (Vec<u32>, Vec<u32>) {
             Err(e) => println!("{}", e),
         }
     }
-    return (list_a, list_b);
+    return LocationIDs(list_a, list_b);
 }
