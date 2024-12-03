@@ -28,7 +28,7 @@ def make_csv(file, headers: list[str]) -> Result[None, Exception]:
         if buf[0] != ",".join(headers) + "\n":
             file.seek(0)
             writer.writerow(headers)
-            # Strip whitespace in line before writing row, if row not already formatted
+            # Strip whitespace in line before writing row
             for line in buf:
                 newline = [
                     word.strip()

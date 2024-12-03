@@ -5,9 +5,8 @@ const REPORTS_FILE_PATH: &str = "src/day2/reports.txt";
 #[derive(Debug)]
 pub struct Report {
     pub sequence: Vec<u32>,
+    pub length: u16,
     pub safety: ReportSafety,
-    #[allow(dead_code)]
-    length: u16,
 }
 
 impl Report {
@@ -23,8 +22,8 @@ impl Report {
 
         Self {
             sequence,
-            safety,
             length,
+            safety,
         }
     }
 
@@ -51,10 +50,10 @@ pub enum SafetyOrder {
 
 impl SafetyOrder {
     pub fn get(part_seq: Vec<u32>) -> Option<Self> {
-        let seq_iter = part_seq.iter();
         let mut order: Option<SafetyOrder> = None;
         let mut prev_ord: Option<SafetyOrder> = None;
         let mut prev_num = &0;
+        let seq_iter = part_seq.iter();
 
         for (i, num) in seq_iter.enumerate() {
             // Can only determine asc/desc on 2nd loop
@@ -88,18 +87,8 @@ impl SafetyOrder {
 
 pub fn sum_safe_reports() {
     let reports = load_reports();
-    let mut safe_reports: Vec<Report> = Vec::new();
-
-    for report in reports {
-        if report.safe() {
-            safe_reports.push(report);
-        }
-    }
-    // let test_report = Report::new(vec![11, 9, 6, 7, 5, 4]);
-    // println!("{:?}", test_report);
-
-    let safe_count = safe_reports.len();
-    println!("D2P1 | Safe Report Count => {}", safe_count);
+    let safe_reports: Vec<Report> = reports.into_iter().filter(|report| report.safe()).collect();
+    println!("D2P1 | Safe Report Count => {}", safe_reports.len());
 }
 
 pub fn load_reports() -> Vec<Report> {

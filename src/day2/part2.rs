@@ -14,9 +14,9 @@ impl ProblemDampener {
             let sequence = &report.sequence;
             let mut vecs: Vec<Vec<u32>> = Vec::new();
 
-            for i in 0..sequence.len() {
+            for i in 0..report.length {
                 let mut new_vec = sequence.clone();
-                new_vec.remove(i);
+                new_vec.remove(i.into());
                 vecs.push(new_vec);
             }
 
@@ -38,13 +38,12 @@ impl ProblemDampener {
 pub fn run_problem_dampener() {
     let reports = load_reports();
     let dampener = ProblemDampener::new(reports);
-    let mut safe_reports = Vec::new();
-
     let damp_reports = dampener.run();
-    damp_reports.iter().for_each(|report| {
-        if report.safe() {
-            safe_reports.push(report);
-        }
-    });
+
+    let safe_reports: Vec<Report> = damp_reports
+        .into_iter()
+        .filter(|report| report.safe())
+        .collect();
+
     println!("D2P2 | Dampened Safe Count => {}", safe_reports.len())
 }
