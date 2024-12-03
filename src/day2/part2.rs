@@ -1,5 +1,4 @@
-use super::part1::ReportSafety;
-use crate::day2::part1::{load_reports, Report, SafetyOrder};
+use super::part1::{load_reports, Report, ReportSafety, SafetyOrder};
 
 #[derive(Debug)]
 struct ProblemDampener {

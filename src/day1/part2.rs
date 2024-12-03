@@ -1,4 +1,4 @@
-use crate::day1::part1::load_location_ids;
+use super::part1::load_location_ids;
 
 pub fn calc_similarity_score() {
     let mut sim_score: u32 = 0;
