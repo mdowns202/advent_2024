@@ -8,8 +8,8 @@
 - [x] Report Safety
 - [x] Problem Dampener
 
-#### Day Three
-- [ ] Part 1
+#### Day Three (Mull It Over)
+- [x] Part 1
 - [ ] Part 2
 
 #### Day Four

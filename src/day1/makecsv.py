@@ -36,7 +36,7 @@ def make_csv(file, headers: list[str]) -> Result[None, Exception]:
                     if word and len(line.split()) > 1
                 ]
                 og_line = (
-                    [word.strip() for word in line.split(",")] if not newline else None
+                    [word.strip() for word in line.split(",")] if not newline else ""
                 )
                 writer.writerow(newline) if newline else writer.writerow(og_line)
             file.truncate()

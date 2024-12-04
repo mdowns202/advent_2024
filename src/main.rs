@@ -10,6 +10,6 @@ fn main() {
     day2::part1::sum_safe_reports();
     day2::part2::run_problem_dampener();
     println!("\n==== DAY 03 ====");
-    day3::part1::print_instruction_results();
-    day3::part2::do_part_2();
+    day3::part1::print_reg_instruction_prod_sum();
+    day3::part2::print_cond_instruction_prod_sum();
 }
