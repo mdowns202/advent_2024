@@ -6,8 +6,8 @@ ANSWER_FILE_PATH = Path("src/day3/answer.txt")
 Pairs = list[str]
 
 def main() -> None:
-    reg_muls: list[str] = []
-    cond_muls: list[str] = []
+    reg_muls: Pairs = []
+    cond_muls: Pairs = []
 
     try:
         with open(RAW_MUL_FILE_PATH, "r") as raw_file:
@@ -28,7 +28,7 @@ def main() -> None:
         print(f"{e}")
 
 
-def findall_muleqs(file, conditional=False) -> list[str]:
+def findall_muleqs(file, conditional=False) -> Pairs:
     contents = file.read()
     patterns = {
         "regular": r"mul\(\d{1,3}\,\d{1,3}\)",
@@ -57,7 +57,7 @@ def findall_muleqs(file, conditional=False) -> list[str]:
 
 
 def sum_pair_products(clean_pairs: Pairs) -> int:
-    str_pairs: list[list[str]] = [
+    str_pairs: list[Pairs] = [
         item.replace("mul(", "").replace(")", "").split(",") for item in clean_pairs
     ]
     product_sum = sum([int(pair[0]) * int(pair[1]) for pair in str_pairs])
