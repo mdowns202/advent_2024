@@ -10,7 +10,7 @@
 
 #### Day Three (Mull It Over)
 - [x] Part 1
-- [ ] Part 2
+- [x] Part 2
 
 #### Day Four
 - [ ] Part 1
