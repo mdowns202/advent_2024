@@ -5,6 +5,7 @@ RAW_MUL_FILE_PATH = Path("src/day3/data/raw.txt")
 ANSWER_FILE_PATH = Path("src/day3/answer.txt")
 Pairs = list[str]
 
+
 def main() -> None:
     reg_muls: Pairs = []
     cond_muls: Pairs = []
@@ -39,12 +40,10 @@ def findall_muleqs(file, conditional=False) -> Pairs:
     if not conditional:
         cleaned_items = re.findall(patterns["regular"], contents)
     else:
-        matches = [
-            (m.group(), m.start()) for m in re.finditer(patterns["enabled"], contents)
-        ]
+        matches = [m.group() for m in re.finditer(patterns["enabled"], contents)]
         enabled = True
 
-        for match, pos in matches:
+        for match in matches:
             match match:
                 case "do()":
                     enabled = True
