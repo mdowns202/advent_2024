@@ -12,9 +12,9 @@ def main() -> None:
 
     try:
         with open(RAW_MUL_FILE_PATH, "r") as raw_file:
-            reg_muls = findall_muleqs(raw_file)
-            raw_file.seek(0)
-            cond_muls = findall_muleqs(raw_file, conditional=True)
+            contents = raw_file.read()
+            reg_muls = findall_muleqs(contents)
+            cond_muls = findall_muleqs(contents, conditional=True)
 
         prod_sum_reg = sum_pair_products(reg_muls)
         prod_sum_cond = sum_pair_products(cond_muls)
@@ -29,8 +29,7 @@ def main() -> None:
         print(f"{e}")
 
 
-def findall_muleqs(file, conditional=False) -> Pairs:
-    contents = file.read()
+def findall_muleqs(contents, conditional=False) -> Pairs:
     patterns = {
         "regular": r"mul\(\d{1,3}\,\d{1,3}\)",
         "enabled": r"(do\(\)|don\'t\(\)|mul\(\d{1,3},\d{1,3}\))",
