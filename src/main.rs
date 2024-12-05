@@ -15,4 +15,5 @@ fn main() {
     day3::part2::print_cond_instruction_prod_sum();
     println!("\n==== DAY 04 ====");
     day4::part1::solve_xmas_word_search();
+    day4::part2::solve_x_mas_word_search();
 }
