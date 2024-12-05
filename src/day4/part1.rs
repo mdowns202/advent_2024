@@ -1,10 +1,5 @@
 use super::XMAS_FILE_PATH;
-use std::{
-    fmt::{Debug, Display},
-    fs,
-    path::Path,
-    usize,
-};
+use std::{fmt::Debug, fs, path::Path, usize};
 
 const XMAS: &str = "XMAS";
 
@@ -12,7 +7,7 @@ pub fn solve_xmas_word_search() {
     let content: String = get_content(XMAS_FILE_PATH);
     let mut ws = WordSearch::new(content);
     ws.find_matches(XMAS);
-    println!("D4P1 | 'XMAS' Word Count => {}", ws.count);
+    println!("D4P1 | 'XMAS' Match Count => {}", ws.count);
 }
 
 pub fn get_content(path_str: &str) -> String {
@@ -28,12 +23,13 @@ pub struct SearchPuzzle<T> {
     puzzle: Vec<Vec<T>>,
     mode: SearchMode,
     cursor: Cursor,
-    count: u16,
+    offset: usize,
+    pub count: u16,
 }
 
 impl<T> SearchPuzzle<T>
 where
-    T: Display + PartialEq<char> + Clone + Debug + Default,
+    T: Clone + PartialEq<char> + ToString,
     Vec<T>: FromIterator<char>,
 {
     pub fn new(content: String) -> Self {
@@ -45,36 +41,46 @@ where
             puzzle,
             mode,
             cursor,
+            offset: 0,
             count: 0,
         }
     }
 
-    pub fn with_searchmode(&mut self, mode_str: &str) {
+    pub fn with_searchmode(mut self, mode_str: &str) -> Self {
         self.mode = SearchMode::from_str(mode_str).unwrap_or_else(|| {
             println!("search mode does not exist. defaulting to 'FULL' search.",);
             SearchMode::default()
         });
+        self
     }
 
-    fn find_matches(&mut self, word: &str) {
+    pub fn with_offset(mut self, offset: usize) -> Self {
+        self.offset = offset;
+        self
+    }
+
+    pub fn find_matches(&mut self, word: &str) {
         let puzzle = self.puzzle.clone();
         let characters = word.chars().collect::<Vec<char>>();
         puzzle.iter().enumerate().for_each(|(x, row)| {
             row.iter().enumerate().for_each(|(y, letter)| {
-                if *letter == characters[0] {
+                if *letter == characters[self.offset] {
                     self.cursor.point(x, y);
-                    self.check_for_match(word, true)
+                    self.check_for_match(word)
                 }
             });
         });
     }
 
-    fn check_for_match(&mut self, word: &str, full_search: bool) {
+    fn check_for_match(&mut self, word: &str) {
         let mut possibilities: Possibilities = Vec::new();
-        possibilities.extend(self.search_diagonal());
-        match full_search {
-            true => possibilities.extend(self.search_horizontal_and_vertical()),
-            false => (),
+        match self.mode {
+            SearchMode::Full => {
+                possibilities.extend(self.search_diagonal());
+                possibilities.extend(self.search_horizontal_and_vertical());
+            }
+            SearchMode::Diagonal => possibilities.extend(self.search_diagonal()),
+            SearchMode::HorzVert => possibilities.extend(self.search_horizontal_and_vertical()),
         }
 
         possibilities.iter().for_each(|possible| match possible {
@@ -114,17 +120,17 @@ where
             current_cell.clone(),
             puzzle
                 .get(x.checked_sub(1).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y)
                 .cloned(),
             puzzle
                 .get(x.checked_sub(2).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y)
                 .cloned(),
             puzzle
                 .get(x.checked_sub(3).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y)
                 .cloned(),
         ];
@@ -132,21 +138,9 @@ where
 
         let downward = vec![
             current_cell,
-            puzzle
-                .get(x + 1)
-                .unwrap_or(&Self::default_vec())
-                .get(y)
-                .cloned(),
-            puzzle
-                .get(x + 2)
-                .unwrap_or(&Self::default_vec())
-                .get(y)
-                .cloned(),
-            puzzle
-                .get(x + 3)
-                .unwrap_or(&Self::default_vec())
-                .get(y)
-                .cloned(),
+            puzzle.get(x + 1).unwrap_or(&Vec::default()).get(y).cloned(),
+            puzzle.get(x + 2).unwrap_or(&Vec::default()).get(y).cloned(),
+            puzzle.get(x + 3).unwrap_or(&Vec::default()).get(y).cloned(),
         ];
         options.push(downward);
 
@@ -174,17 +168,17 @@ where
             current_cell.clone(),
             puzzle
                 .get(x.checked_sub(1).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 1)
                 .cloned(),
             puzzle
                 .get(x.checked_sub(2).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 2)
                 .cloned(),
             puzzle
                 .get(x.checked_sub(3).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 3)
                 .cloned(),
         ];
@@ -194,17 +188,17 @@ where
             current_cell.clone(),
             puzzle
                 .get(x + 1)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 1)
                 .cloned(),
             puzzle
                 .get(x + 2)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 2)
                 .cloned(),
             puzzle
                 .get(x + 3)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y + 3)
                 .cloned(),
         ];
@@ -214,17 +208,17 @@ where
             current_cell.clone(),
             puzzle
                 .get(x.checked_sub(1).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(1).unwrap_or(usize::MAX))
                 .cloned(),
             puzzle
                 .get(x.checked_sub(2).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(2).unwrap_or(usize::MAX))
                 .cloned(),
             puzzle
                 .get(x.checked_sub(3).unwrap_or(usize::MAX))
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(3).unwrap_or(usize::MAX))
                 .cloned(),
         ];
@@ -234,17 +228,17 @@ where
             current_cell.clone(),
             puzzle
                 .get(x + 1)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(1).unwrap_or(usize::MAX))
                 .cloned(),
             puzzle
                 .get(x + 2)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(2).unwrap_or(usize::MAX))
                 .cloned(),
             puzzle
                 .get(x + 3)
-                .unwrap_or(&Self::default_vec())
+                .unwrap_or(&Vec::default())
                 .get(y.checked_sub(3).unwrap_or(usize::MAX))
                 .cloned(),
         ];
@@ -261,13 +255,9 @@ where
 
         diag_possibilities
     }
-
-    fn default_vec() -> Vec<T> {
-        Vec::default()
-    }
 }
 
-#[derive(Debug)]
+#[derive(Clone, Debug)]
 struct Cursor {
     x: usize,
     y: usize,
@@ -285,6 +275,7 @@ enum SearchMode {
     #[default]
     Full,
     Diagonal,
+    HorzVert,
 }
 
 impl SearchMode {
@@ -292,6 +283,7 @@ impl SearchMode {
         match value {
             "full" => Some(SearchMode::Full),
             "diag" => Some(SearchMode::Diagonal),
+            "hv" => Some(SearchMode::HorzVert),
             _ => None,
         }
     }
