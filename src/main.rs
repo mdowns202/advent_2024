@@ -1,6 +1,7 @@
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -12,4 +13,6 @@ fn main() {
     println!("\n==== DAY 03 ====");
     day3::part1::print_reg_instruction_prod_sum();
     day3::part2::print_cond_instruction_prod_sum();
+    println!("\n==== DAY 04 ====");
+    day4::part1::solve_xmas_word_search();
 }

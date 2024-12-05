@@ -1,6 +1,6 @@
 use std::{fs, path::Path};
 
-const REPORTS_FILE_PATH: &str = "src/day2/reports.txt";
+const REPORTS_FILE_PATH: &str = "src/day2/data/reports.txt";
 
 #[derive(Debug)]
 pub struct Report {

@@ -1,10 +1,14 @@
 [project]
 name = "advent"
 version = "0.1.0"
-description = "Add your description here"
+description = "Solutions for Advent of Code 2024"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "mypy>=1.13.0",
     "result>=0.17.0",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "mypy>=1.13.0",
 ]

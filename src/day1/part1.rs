@@ -1,7 +1,7 @@
 use csv;
 use std::path::Path;
 
-const LOC_ID_FILE_PATH: &str = "src/day1/location_ids.csv";
+const LOC_ID_FILE_PATH: &str = "src/day1/data/location_ids.csv";
 
 #[derive(Debug)]
 pub struct SortedRecord {
