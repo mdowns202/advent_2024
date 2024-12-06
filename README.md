@@ -12,11 +12,11 @@
 - [x] Part 1
 - [x] Part 2
 
-#### Day Four
+#### Day Four (Ceres Search)
 - [x] Part 1
 - [x] Part 2
 
-#### Day Five
+#### Day Five (Print Queue)
 - [ ] Part 1
 - [ ] Part 2
 
