@@ -14,7 +14,7 @@
 
 #### Day Four
 - [x] Part 1
-- [ ] Part 2
+- [x] Part 2
 
 #### Day Five
 - [ ] Part 1

@@ -4,9 +4,6 @@ from result import Err, Ok, Result
 
 
 def main(args):
-    """Format data as csv file. It was quicker to work with this simple file in Python"""
-    """* Was pretty easy to work with this type of file in Rust as well *"""
-
     try:
         with open(args[1], "r+", newline="") as file:
             headers = args[2:]
@@ -20,15 +17,12 @@ def main(args):
 
 
 def make_csv(file, headers: list[str]) -> Result[None, Exception]:
-    # Change line terminator; original data may have been in 'excel-tab' dialect
     buf = file.readlines()
     writer = csv.writer(file, lineterminator="\n")
-    # Don't run if file is already formatted
     try:
         if buf[0] != ",".join(headers) + "\n":
             file.seek(0)
             writer.writerow(headers)
-            # Strip whitespace in line before writing row
             for line in buf:
                 newline = [
                     word.strip()

@@ -20,7 +20,7 @@ def main() -> None:
         prod_sum_cond = sum_pair_products(cond_muls)
 
         with open(ANSWER_FILE_PATH, "w") as file:
-            file.writelines([f"{str(prod_sum_reg)}\n", str(prod_sum_cond)"])
+            file.writelines([f"{str(prod_sum_reg)}\n", str(prod_sum_cond)])
             print(
                 f"SUCCESS! => '{prod_sum_reg:,}' written to '{ANSWER_FILE_PATH.parts[-1]}'",
                 f"\nSUCCESS! => '{prod_sum_cond:,}' written to '{ANSWER_FILE_PATH.parts[-1]}'",
