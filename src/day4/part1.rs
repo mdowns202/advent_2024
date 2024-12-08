@@ -6,7 +6,7 @@ const XMAS: &str = "XMAS";
 
 pub fn solve_xmas_word_search() {
     let content: String = get_content(XMAS_FILE_PATH);
-    let mut ws = WordSearch::new(XMAS, content);
+    let mut ws = WordSearch::new(content);
     ws.find_matches(XMAS);
     println!("D4P1 | 'XMAS' Match Count => {}", ws.count);
 }
@@ -35,14 +35,14 @@ where
     T: Clone + Debug + PartialEq<char> + ToString,
     Vec<T>: FromIterator<char>,
 {
-    pub fn new(word: &'static str, content: String) -> Self {
+    pub fn new(content: String) -> Self {
         let rows: Vec<&str> = content.lines().collect();
         let puzzle: Vec<Vec<T>> = rows.iter().map(|row| row.chars().collect()).collect();
         let mode = SearchMode::default();
         let cursor = Cursor { x: 0, y: 0 };
         Self {
             puzzle,
-            word,
+            word: "",
             mode,
             cursor,
             offset: 0,
@@ -71,7 +71,8 @@ where
         self
     }
 
-    pub fn find_matches(&mut self, word: &str) {
+    pub fn find_matches(&mut self, word: &'static str) {
+        self.word = word;
         let puzzle = self.puzzle.clone();
         let characters: Vec<char> = word.chars().collect();
         puzzle.iter().enumerate().for_each(|(x, row)| {
@@ -420,4 +421,3 @@ enum SearchMode {
 
 pub type WordSearch = SearchPuzzle<char>;
 type Possibilities = Vec<String>;
-

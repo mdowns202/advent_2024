@@ -4,7 +4,7 @@ const MAS: &str = "MAS";
 
 pub fn solve_x_mas_word_search() {
     let content = get_content(XMAS_FILE_PATH);
-    let mut ws = WordSearch::new(MAS, content)
+    let mut ws = WordSearch::new(content)
         .with_searchmode("dg")
         .with_multiplier(2)
         .with_offset(1);
