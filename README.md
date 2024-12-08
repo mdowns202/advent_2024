@@ -24,7 +24,7 @@
 - [ ] Part 1
 - [ ] Part 2
 
-#### Day Seven
+#### Day Seven (Bridge Repair)
 - [x] Part 1
 - [ ] Part 2
 
