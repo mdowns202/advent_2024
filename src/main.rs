@@ -3,6 +3,7 @@ mod day2;
 mod day3;
 mod day4;
 mod day5;
+mod day7;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -18,5 +19,7 @@ fn main() {
     day4::part1::solve_xmas_word_search();
     day4::part2::solve_x_mas_word_search();
     println!("\n==== DAY 05 ====");
-    day5::part1::do_part1_stuff();
+    day5::part1::print_median_safety_sum();
+    println!("\n==== DAY 07 ====");
+    day7::part1::print_calibration_total();
 }

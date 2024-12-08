@@ -25,7 +25,7 @@
 - [ ] Part 2
 
 #### Day Seven
-- [ ] Part 1
+- [x] Part 1
 - [ ] Part 2
 
 #### Day Eight
