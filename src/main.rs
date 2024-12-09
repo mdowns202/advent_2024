@@ -25,4 +25,5 @@ fn main() {
     day7::part1::print_calibration_total();
     println!("\n==== DAY 08 ====");
     day8::part1::print_antinode_total();
+    day8::part2::print_inline_antinode_total();
 }

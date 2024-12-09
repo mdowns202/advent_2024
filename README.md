@@ -28,9 +28,9 @@
 - [x] Part 1
 - [ ] Part 2
 
-#### Day Eight
+#### Day Eight (Resonant Collinearity)
 - [x] Part 1
-- [ ] Part 2
+- [x] Part 2
 
 #### Day Nine
 - [ ] Part 1
