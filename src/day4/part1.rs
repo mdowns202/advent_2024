@@ -21,13 +21,13 @@ pub fn get_content(path_str: &str) -> String {
 
 #[derive(Debug)]
 pub struct SearchPuzzle<T> {
-    pub puzzle: Vec<Vec<T>>,
+    puzzle: Vec<Vec<T>>,
     word: &'static str,
     mode: SearchMode,
     cursor: Cursor,
     offset: usize,
+    multi: u8,
     pub count: u16,
-    pub multi: u8,
 }
 
 impl<T> SearchPuzzle<T>
@@ -46,8 +46,8 @@ where
             mode,
             cursor,
             offset: 0,
-            count: 0,
             multi: 1,
+            count: 0,
         }
     }
 

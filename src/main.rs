@@ -4,6 +4,7 @@ mod day3;
 mod day4;
 mod day5;
 mod day7;
+mod day8;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -22,4 +23,6 @@ fn main() {
     day5::part1::print_median_safety_sum();
     println!("\n==== DAY 07 ====");
     day7::part1::print_calibration_total();
+    println!("\n==== DAY 08 ====");
+    day8::part1::print_antinode_total();
 }

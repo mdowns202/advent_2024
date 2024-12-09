@@ -29,7 +29,7 @@
 - [ ] Part 2
 
 #### Day Eight
-- [ ] Part 1
+- [x] Part 1
 - [ ] Part 2
 
 #### Day Nine
