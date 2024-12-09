@@ -9,15 +9,15 @@
 - [x] Problem Dampener
 
 #### Day Three (Mull It Over)
-- [x] Part 1
-- [x] Part 2
+- [x] Corrupted Memory
+- [x] Conditional Corruption
 
 #### Day Four (Ceres Search)
-- [x] Part 1
-- [x] Part 2
+- [x] XMAS Search
+- [x] X-MAS Search
 
 #### Day Five (Print Queue)
-- [x] Part 1
+- [x] Safety Update Rules
 - [ ] Part 2
 
 #### Day Six
@@ -25,11 +25,11 @@
 - [ ] Part 2
 
 #### Day Seven (Bridge Repair)
-- [x] Part 1
+- [x] Equation Calibration
 - [ ] Part 2
 
 #### Day Eight (Resonant Collinearity)
-- [x] Part 1
+- [x] Antenna Frequency
 - [x] Part 2
 
 #### Day Nine
