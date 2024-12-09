@@ -32,8 +32,8 @@
 - [x] Antinode Frequency
 - [x] Inline Antinode Frequency
 
-#### Day Nine
-- [ ] Part 1
+#### Day Nine (Disk Fragmenter)
+- [x] Checksum Check
 - [ ] Part 2
 
 #### Day Ten

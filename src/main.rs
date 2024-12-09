@@ -5,6 +5,7 @@ mod day4;
 mod day5;
 mod day7;
 mod day8;
+mod day9;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -26,4 +27,6 @@ fn main() {
     println!("\n==== DAY 08 ====");
     day8::part1::print_antinode_total();
     day8::part2::print_inline_antinode_total();
+    println!("\n==== DAY 09 ====");
+    day9::part1::print_filesystem_checksum_value();
 }
