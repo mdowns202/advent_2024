@@ -29,8 +29,8 @@
 - [ ] Part 2
 
 #### Day Eight (Resonant Collinearity)
-- [x] Antenna Frequency
-- [x] Part 2
+- [x] Antinode Frequency
+- [x] Inline Antinode Frequency
 
 #### Day Nine
 - [ ] Part 1
