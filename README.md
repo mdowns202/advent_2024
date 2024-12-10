@@ -36,8 +36,8 @@
 - [x] Checksum Check
 - [ ] Part 2
 
-#### Day Ten
-- [ ] Part 1
+#### Day Ten (Hoof It)
+- [x] Trailhead Score
 - [ ] Part 2
 
 #### Day Eleven

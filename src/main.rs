@@ -1,4 +1,5 @@
 mod day1;
+mod day10;
 mod day2;
 mod day3;
 mod day4;
@@ -29,4 +30,6 @@ fn main() {
     day8::part2::print_inline_antinode_total();
     println!("\n==== DAY 09 ====");
     day9::part1::print_filesystem_checksum_value();
+    println!("\n==== DAY 10 ====");
+    day10::part1::print_total_trailhead_score();
 }
