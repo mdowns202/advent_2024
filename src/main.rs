@@ -8,6 +8,7 @@ mod day07;
 mod day08;
 mod day09;
 mod day10;
+mod day11;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -36,4 +37,7 @@ fn main() {
     println!("\n==== DAY 10 ====");
     day10::part1::print_total_trailhead_score();
     day10::part2::print_trail_area_rating();
+    println!("\n==== DAY 11 ====");
+    day11::part1::print_little_stone_magnitude();
+    day11::part2::print_big_stone_magnitude();
 }
