@@ -20,7 +20,7 @@
 - [x] Safety Update Rules
 - [ ] Part 2
 
-#### Day Six
+#### Day Six (Guard Gallivant)
 - [ ] Part 1
 - [ ] Part 2
 
