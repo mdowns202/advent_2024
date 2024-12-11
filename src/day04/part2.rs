@@ -11,7 +11,7 @@ pub fn solve_x_mas_word_search() {
 
     ws.find_matches(MAS);
 
-    println!("D4P2 | 'X-MAS' Match Count => {}", ws.count);
+    println!("D04P2 | 'X-MAS' Match Count => {}", ws.count);
 
     //ws.puzzle.iter().for_each(|ser| {
     //    println!("{:?}", ser);

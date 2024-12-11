@@ -1,11 +1,11 @@
 use super::ANSWER_FILE_PATH;
 use std::{fs, path::Path};
 
-pub fn print_calibration_total() {
+pub fn print_inline_antinode_total() {
     let file_path = Path::new(ANSWER_FILE_PATH);
     let contents = fs::read_to_string(file_path).unwrap();
     println!(
-        "D7P1 | Calibration Total => {}",
-        contents.lines().next().unwrap()
+        "D08P2 | Inline Antinode Total => {}",
+        contents.lines().nth(1).unwrap()
     );
 }

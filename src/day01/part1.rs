@@ -1,7 +1,7 @@
 use csv;
 use std::path::Path;
 
-const LOC_ID_FILE_PATH: &str = "src/day1/data/location_ids.csv";
+const LOC_ID_FILE_PATH: &str = "src/day01/data/location_ids.csv";
 
 #[derive(Debug)]
 pub struct SortedRecord {
@@ -42,7 +42,7 @@ pub fn calc_total_difference() {
         let difference: u32 = record.list_a_item.abs_diff(record.list_b_item);
         total_difference += difference;
     }
-    println!("D1P1 | Total List Difference => {}", total_difference);
+    println!("D01P1 | Total List Difference => {}", total_difference);
 }
 
 pub fn load_location_ids() -> LocationIDs {

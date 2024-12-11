@@ -38,7 +38,7 @@
 
 #### Day Ten (Hoof It)
 - [x] Trailhead Score
-- [ ] Part 2
+- [x] Trailhead Rating
 
 #### Day Eleven
 - [ ] Part 1

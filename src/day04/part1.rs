@@ -8,7 +8,7 @@ pub fn solve_xmas_word_search() {
     let content: String = get_content(XMAS_FILE_PATH);
     let mut ws = WordSearch::new(content);
     ws.find_matches(XMAS);
-    println!("D4P1 | 'XMAS' Match Count => {}", ws.count);
+    println!("D04P1 | 'XMAS' Match Count => {}", ws.count);
 }
 
 pub fn get_content(path_str: &str) -> String {

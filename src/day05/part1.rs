@@ -5,7 +5,7 @@ pub fn print_median_safety_sum() {
     let file_path = Path::new(ANSWER_FILE_PATH);
     let contents = fs::read_to_string(file_path).unwrap();
     println!(
-        "D5P1 | Median Safety Sum => {}",
+        "D05P1 | Median Safety Sum => {}",
         contents.lines().next().unwrap()
     );
 }

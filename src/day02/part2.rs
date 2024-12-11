@@ -45,5 +45,5 @@ pub fn run_problem_dampener() {
         .filter(|report| report.safe())
         .collect();
 
-    println!("D2P2 | Dampened Safe Count => {}", safe_reports.len())
+    println!("D02P2 | Dampened Safe Count => {}", safe_reports.len())
 }

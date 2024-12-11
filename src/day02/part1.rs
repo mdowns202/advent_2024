@@ -1,6 +1,6 @@
 use std::{fs, path::Path};
 
-const REPORTS_FILE_PATH: &str = "src/day2/data/reports.txt";
+const REPORTS_FILE_PATH: &str = "src/day02/data/reports.txt";
 
 #[derive(Debug)]
 pub struct Report {
@@ -88,7 +88,7 @@ impl SafetyOrder {
 pub fn sum_safe_reports() {
     let reports = load_reports();
     let safe_reports: Vec<Report> = reports.into_iter().filter(|report| report.safe()).collect();
-    println!("D2P1 | Safe Report Count => {}", safe_reports.len());
+    println!("D02P1 | Safe Report Count => {}", safe_reports.len());
 }
 
 pub fn load_reports() -> Vec<Report> {

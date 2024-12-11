@@ -17,5 +17,5 @@ pub fn calc_similarity_score() {
             sim_score += item_count;
         }
     }
-    println!("D1P2 | Similarity Score => {}", sim_score);
+    println!("D01P2 | Similarity Score => {}", sim_score);
 }
