@@ -40,7 +40,7 @@
 - [x] Trailhead Score
 - [x] Trailhead Rating
 
-#### Day Eleven (Plutonian Pebbels)
+#### Day Eleven (Plutonian Pebbles)
 - [x] Stone Magnitude
 - [ ] Part 2
 
