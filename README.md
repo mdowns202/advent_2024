@@ -40,12 +40,12 @@
 - [x] Trailhead Score
 - [x] Trailhead Rating
 
-#### Day Eleven
-- [ ] Part 1
+#### Day Eleven (Plutonian Pebbels)
+- [x] Stone Magnitude
 - [ ] Part 2
 
 #### Day Twelve (Garden Groups)
-- [x] Fence Price
+- [ ] Part 1
 - [ ] Part 2
 
 #### Day Thirteen (Claw Contraption)
