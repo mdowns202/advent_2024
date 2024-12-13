@@ -9,6 +9,8 @@ mod day08;
 mod day09;
 mod day10;
 mod day11;
+mod day12;
+mod day13;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -39,5 +41,9 @@ fn main() {
     day10::part2::print_trail_area_rating();
     println!("\n==== DAY 11 ====");
     day11::part1::print_little_stone_magnitude();
-    day11::part2::print_big_stone_magnitude();
+    // day11::part2::print_big_stone_magnitude();
+    println!("\n==== DAY 12 ====");
+    day12::part1::print_fence_price();
+    println!("\n==== DAY 13 ====");
+    day13::part1::print_lowest_claw_tokens();
 }

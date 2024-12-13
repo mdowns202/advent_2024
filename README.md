@@ -44,7 +44,10 @@
 - [ ] Part 1
 - [ ] Part 2
 
-#### Day Twelve
-- [ ] Part 1
+#### Day Twelve (Garden Groups)
+- [x] Fence Price
 - [ ] Part 2
 
+#### Day Thirteen (Claw Contraption)
+- [x] Least Possible Tokens
+- [ ] x10 Trillion
