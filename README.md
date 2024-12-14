@@ -21,7 +21,7 @@
 - [ ] Part 2
 
 #### Day Six (Guard Gallivant)
-- [ ] Part 1
+- [x] Part 1
 - [ ] Part 2
 
 #### Day Seven (Bridge Repair)
