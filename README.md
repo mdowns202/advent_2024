@@ -21,7 +21,7 @@
 - [ ] Part 2
 
 #### Day Six (Guard Gallivant)
-- [x] Part 1
+- [x] Unique Guard Positions
 - [ ] Part 2
 
 #### Day Seven (Bridge Repair)
@@ -51,3 +51,7 @@
 #### Day Thirteen (Claw Contraption)
 - [x] Least Possible Tokens
 - [ ] x10 Trillion
+
+#### Day Fourteen (Restroom Redoubt)
+- [x] Robot Safety Rating
+- [ ] Easter Egg

@@ -11,6 +11,7 @@ mod day10;
 mod day11;
 mod day12;
 mod day13;
+mod day14;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -46,4 +47,6 @@ fn main() {
     day12::part1::print_fence_price();
     println!("\n==== DAY 13 ====");
     day13::part1::print_lowest_claw_tokens();
+    println!("\n==== DAY 14 ====");
+    day14::part1::print_robot_safety_factor();
 }
