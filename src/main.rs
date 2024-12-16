@@ -12,6 +12,8 @@ mod day11;
 mod day12;
 mod day13;
 mod day14;
+mod day15;
+mod day16;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -42,11 +44,12 @@ fn main() {
     day10::part2::print_trail_area_rating();
     println!("\n==== DAY 11 ====");
     day11::part1::print_little_stone_magnitude();
-    // day11::part2::print_big_stone_magnitude();
     println!("\n==== DAY 12 ====");
     day12::part1::print_fence_price();
     println!("\n==== DAY 13 ====");
     day13::part1::print_lowest_claw_tokens();
     println!("\n==== DAY 14 ====");
     day14::part1::print_robot_safety_factor();
+    println!("\n==== DAY 15 ====");
+    day15::part1::print_lanternfish_gps_sum();
 }

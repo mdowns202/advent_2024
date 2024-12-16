@@ -55,3 +55,11 @@
 #### Day Fourteen (Restroom Redoubt)
 - [x] Robot Safety Rating
 - [ ] Easter Egg
+
+#### Day Fifteen (Warehouse Woes)
+- [x] Lanternfish GPS Sum
+- [ ] Double-Wide 
+
+#### Day Sixteen (Reindeer Maze)
+- [ ] Shortest Path
+- [ ] Part 2
