@@ -14,6 +14,7 @@ mod day13;
 mod day14;
 mod day15;
 mod day16;
+mod day17;
 
 fn main() {
     println!("\n==== DAY 01 ====");
@@ -52,4 +53,7 @@ fn main() {
     day14::part1::print_robot_safety_factor();
     println!("\n==== DAY 15 ====");
     day15::part1::print_lanternfish_gps_sum();
+    println!("\n==== DAY 16 ====");
+    println!("\n==== DAY 17 ====");
+    day17::part1::print_chrono_cpu_output();
 }

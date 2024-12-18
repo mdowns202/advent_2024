@@ -63,3 +63,7 @@
 #### Day Sixteen (Reindeer Maze)
 - [ ] Shortest Path
 - [ ] Part 2
+
+#### Day Seventeen (Chronospatial Computer)
+- [x] Chrono CPU Program Output
+- [ ] Part 2
